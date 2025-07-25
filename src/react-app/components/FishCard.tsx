@@ -71,6 +71,13 @@ export default function FishCard({ fish }: FishCardProps) {
             <MapPin className="w-4 h-4 mr-2" />
             <span className="text-sm">{fish.location}</span>
           </div>
+
+          {/* Delivery Window */}
+          <div className="flex items-center text-blue-700 mt-1">
+            <span className="text-xs font-semibold bg-blue-100 rounded px-2 py-0.5">
+              Delivery: {fish.delivery_window}
+            </span>
+          </div>
         </div>
 
         {/* Call to action */}

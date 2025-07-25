@@ -1,5 +1,8 @@
 import z from "zod";
 
+export const DeliveryWindowSchema = z.enum(["Tue/Wed", "Fri/Sat"]);
+export type DeliveryWindow = z.infer<typeof DeliveryWindowSchema>;
+
 export const FishSchema = z.object({
   id: z.number(),
   name: z.string(),
@@ -11,6 +14,7 @@ export const FishSchema = z.object({
   is_available: z.number(),
   created_at: z.string(),
   updated_at: z.string(),
+  delivery_window: DeliveryWindowSchema,
 });
 
 export const SegmentSchema = z.object({
